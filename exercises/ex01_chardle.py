@@ -1,36 +1,38 @@
 """EX01 - Chardle - A cute step toward Wordle."""
 
-_author_ = "730308175"
+__author__ = "730308175"
 
-word = str(input('Enter a 5-character word:' )) #need to establish word
-if (len(word) != 5): 
+word: str = input('Enter a 5-character word:') #5 character input string
+if (len(word) != 5): """ ensure that the input is 5 characters """
     print('Error: Word must contain 5 characters')
-    exit() #exit program if word does not meet requirements
+    exit() #exit program if not true
 
-letter = str(input('Enter a single character:' )) #need to establish character
-if (len(letter) != 1):
+letter: str = input('Enter a single character:') # 1 character input string
+if (len(letter) != 1): #ensure that the input is 1 character
     print('Error: Character must be a single character.')
-    exit() #exit program if more than one character are assessed
+    exit() # exit program if not true
 
-print(f'Searching for {letter} in {word}') #need to show that the program is searching for letter in word
+print(f'Searching for {letter} in {word}') # print searching to show that the following code will be assessing where the letter is in word
 
-letter_count = 0 #start count for letter in word from zero
-if (letter == word[0]): #find if the letter is in the word at index 0
-    letter_count += 1 #count if there is letter at index 0
+letter_count = str = 0 # start letter count in word at zero
+if (letter == word[0]): #check if letter at index 0
+    letter_count += 1 # start append for letter
     print(f'{letter} found at index 0')
-if (letter == word[1]): #find if the letter is in the word at index 1
-    letter_count += 1 #add to previously updated letter_count
+if (letter == word[1]): #check if letter at index 1
+    letter_count += 1 # continue append
     print(f'{letter} found at index 1')
-if (letter == word[2]): #find if the letter is in the word at index 2
-    letter_count += 1 #add to previously updated letter_count
+if (letter == word[2]): #check if letter at index 2
+    letter_count += 1 #continue append
     print(f'{letter} found at index 2')
-if (letter == word[3]): #find if the letter is in the word at index 3
-    letter_count += 1 #add to previously updated letter_count
+if (letter == word[3]): #check if letter at index 3
+    letter_count += 1 #continue append
     print(f'{letter} found at index 3')
-if (letter == word[4]): #find if the letter is in the word at index 4
-    letter_count += 1 #add to previously updated letter_count
+if (letter == word[4]): #check if letter at index 4
+    letter_count += 1 #continue append
     print(f'{letter} found at index 4')  
-if letter_count > 0: #add to previously updated letter_count
+if letter_count > 1: #count multiple matching indices over 1 and print the following line
     print(f'{letter_count} instances of {letter} found in {word}')
-else:
-    print(f'No instances of {letter} found in {word}') #show total number of letter instances in the word
+if letter_count == 1: #if only 1 single matching index, print the following line
+    print(f'1 instance of {letter} found in {word}')
+if letter_count <= 0: #if no indices of letter in word, print the following line
+    print(f'No instances of {letter} found in {word}')
